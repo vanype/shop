@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Банан",
+    "price": 190,
+    "url": "https://th.bing.com/th/id/OIP.klSy3zAn294DmnlZGghK5AHaHa?rs=1&pid=ImgDetMain",
+    "id": "1"
+  },
+  {
+    "name": "Яблоко",
+    "price": 150,
+    "url": "https://th.bing.com/th/id/OIP.zD5dA74Os5pfKf5ZEJIciwHaHu?rs=1&pid=ImgDetMain",
+    "id": "2"
+  }
+]

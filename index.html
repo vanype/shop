@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в продуктовый!</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            
+            <button id="register-btn">Регистрация</button>
+            <button id="login-btn">Вход</button>
+            <button id="admin-btn" style="display: none;">Панель Администратора</button> <!-- Button for admin -->
+        </nav>
+    </header>
+
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-register" class="close">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" required>
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-login" class="close">&times;</span>
+            <h2>Вход</h2>
+            <form id="login-form">
+                <label for="login-email">Электронная почта:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+	<!-- Modal for Add Product -->
+	<div id="add-product-modal" class="modal">
+		<div class="modal-content">
+			<span id="close-add-product" class="close">&times;</span>
+			<h2>Добавить товар</h2>
+			<label for="product-name">Название:</label>
+			<input type="text" id="product-name" placeholder="Введите название товара">
+			<label for="product-price">Цена:</label>
+			<input type="number" id="product-price" placeholder="Введите цену товара">
+			<label for="product-url">url картинки:</label>
+			<input type="text" id="product-url" placeholder="Введите url картинки для товара">
+			<button type="submit" id="submit-add-product">Добавить</button>
+		</div>
+	</div>
+
+
+	
+
+	<!-- Modal for Delete Product -->
+	<div id="delete-product-modal" class="modal">
+		<div class="modal-content">
+			<span id="close-delete-product" class="close">&times;</span>
+			<h2>Удалить товар</h2>
+			<p id="delete-product-name">Вы уверены, что хотите удалить этот товар?</p>
+			<button id="submit-delete-product">Удалить</button>
+			<button id="cancel-delete-product">Отмена</button>
+		</div>
+	</div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="modal">
+        <div class="modal-content">
+            <span id="close-admin" class="close">&times;</span>
+            <h2>Панель Администратора</h2>
+            <div>
+                <h3>Управление товарами</h3>
+                <button id="add-product-btn">Добавить товар</button>
+                
+            </div>
+            
+        </div>
+    </div>
+		
+    <!-- Кнопка для открытия модального окна -->
+	<button id="open-cart-modal" class="cart-button" aria-label="Корзина"></button>
+
+	<!-- Модальное окно -->
+	<div id="cart-modal-container" class="modal-container">
+		<div class="modal-box">
+			<span id="close-cart-modal" class="close-btn">&times;</span>
+			<h2>Корзина</h2>
+			<p id="cart-items-count">Товары в корзине: 0</p>
+			
+			<div id="cart-details"></div> 
+			<p id="cart-total">Итого: 0 Р</p>
+			<button id="payment-btn">Провести оплату</button>
+		</div>
+	</div>
+	
+	<!-- Модальное окно для редактирования товара -->
+	<div id="edit-product-modal" class="modalt">
+		<div class="modal-contentt">
+			<span id="close-modalt" class="closes">&times;</span>
+			<h3>Редактировать товар</h3>
+			<input type="text" id="edit-product-name" placeholder="Название товара" />
+			<input type="number" id="edit-product-price" placeholder="Цена товара" />
+			
+			<button id="save-product-changes">Сохранить изменения</button>
+		</div>
+	</div>
+
+
+
+    <main>
+        <div id="products"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ип Продуктовый</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

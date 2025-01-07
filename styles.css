@@ -1,0 +1,253 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+	width: 100%;
+}
+
+header {
+    background-color: #3a8bcd;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a, nav button {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav a:hover, nav button:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрует карточки по горизонтали */
+    gap: 20px; /* Расстояние между карточками */
+    max-width: 1200px; /* Ограничение по ширине всего блока */
+    margin: 0 auto; /* Выравнивание по центру экрана */
+
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматическое заполнение */
+    gap: 50px; /* Расстояние между товарами */
+	width: 80%;
+	padding-left: 11%;
+	padding-right: 11%;
+}
+
+
+/* Карточки товаров */
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #3a8bcd;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.product-card button {
+    background-color: #3a8bcd;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+	margin-top: 14px;
+}
+
+.product-card button:hover {
+    background-color: #357ABD;
+}
+
+/* Модальные окна */
+.modal, .modal-container , .modalt{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content, .modal-box, .modal-contentt {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close, .close-btn, .closes {
+    color: #888;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close:hover, .close-btn:hover, .closes:hover {
+    color: black;
+}
+
+/* Кнопки в модальных окнах */
+.modal-content button, .modal-box button {
+    background-color: #3a8bcd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover, .modal-box button:hover {
+    background-color: #357ABD;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #3a8bcd;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-button {
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833314.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 60px; /* Размер кнопки */
+    height: 60px;
+    cursor: pointer;
+    outline: none;
+    position: fixed; /* Фиксированное положение */
+    bottom: 120px; /* Отступ от нижнего края */
+    right: 80px; /* Отступ от правого края */
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000; /* Чтобы кнопка находилась поверх других элементов */
+}
+
+.cart-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.admin-delete {
+	position: absolute; /* Для позиционирования внутри родителя */
+    left: 50%; /* Сдвигаем на 50% вправо */
+    transform: translateX(-50%); /* Центрируем относительно самого себя */
+    bottom: 10px; /* Располагаем её чуть выше нижнего края */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    margin-top: 14px;
+}
+
+.admin-delete:hover {
+
+    border-color: #d32f2f; /* Цвет обводки при наведении */
+    transform: translateX(-50%) scale(1.05); /* Увеличение при наведении */
+    
+}
+
+.admin-delete img.dlt-btn {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: opacity 0.2s;
+}
+
+.admin-delete:hover img.dlt-btn {
+    opacity: 0.9;
+}
+
+.admin-delete:active {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Минимальная тень при нажатии */
+}
+
